@@ -1,2 +1,1 @@
-New-Item requirements.txt -ItemType File
-notepad requirements.txt
+pytest
