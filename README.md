@@ -11,15 +11,16 @@ objet : encapsulation, héritage, polymorphisme et abstraction.
     mini-projet-poo-Mourtalla-Gueye/
     ├── README.md
     ├── .gitignore
+    ├── conftest.py            # permet a pytest de trouver le package mediatheque
     ├── mediatheque/
     │   ├── __init__.py
-    │   ├── documents.py      # Document (abstraite), Livre, DVD
-    │   ├── adherent.py       # Adherent
-    │   ├── mediatheque.py    # Mediatheque (gestion des prets)
-    │   └── erreurs.py        # Exceptions personnalisees
+    │   ├── documents.py       # Document (abstraite), Livre, DVD
+    │   ├── adherent.py        # Adherent
+    │   ├── mediatheque.py     # Mediatheque (gestion des prets)
+    │   └── erreurs.py         # Exceptions personnalisees
     ├── tests/
     │   └── test_mediatheque.py
-    └── main.py                # Programme de demonstration
+    └── main.py                 # Programme de demonstration
 
 ## Lancer la démonstration
 
@@ -29,15 +30,9 @@ objet : encapsulation, héritage, polymorphisme et abstraction.
 
     pytest -q
 
-Si cette commande ne trouve pas le module `mediatheque` (erreur
-`ModuleNotFoundError`, cela peut arriver selon la configuration Python de
-certaines machines Windows), utilisez plutôt :
-
-    python -m pytest -q
-
-Les deux commandes lancent les mêmes 7 tests ; la seconde force Python à
-ajouter le dossier courant au chemin d'import, ce que `pytest` seul ne fait
-pas toujours selon l'environnement.
+Un fichier `conftest.py` vide est présent à la racine : il permet à pytest de
+détecter automatiquement le package `mediatheque` lors de l'exécution des
+tests, quel que soit le système d'exploitation.
 
 ## Auteur
 
